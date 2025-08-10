@@ -34,7 +34,6 @@ app.use(express.static(path.join(rootDir, 'client')));
 
 // Rutas estáticas
 app.get('/', (req, res) => res.sendFile(path.join(rootDir, 'client', 'index.html')));
-app.get('/tiendauno', (req, res) => res.sendFile(path.join(rootDir, 'client', 'tiendauno.html')));
 app.get('/comercio2', (req, res) => res.sendFile(path.join(rootDir, 'client/tiendas/comercio2', 'comercio2.html')));
 app.get('/success', (req, res) => res.sendFile(path.join(rootDir, 'client', 'success.html')));
 app.get('/pending', (req, res) => res.sendFile(path.join(rootDir, 'client', 'success.html')));
@@ -562,6 +561,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor funcionando en puerto ${PORT}`);
 });
+
 
 
 
