@@ -25,7 +25,6 @@ const clienteB = new MercadoPagoConfig({
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
-const PORT = 3000;
 const rootDir = path.join(__dirname, '..');
 
 // Middleware
@@ -563,6 +562,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor funcionando en puerto ${PORT}`);
 });
+
 
 
 
