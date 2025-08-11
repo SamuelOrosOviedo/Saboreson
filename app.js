@@ -548,12 +548,16 @@ app.post('/api/log-pedido', (req, res) => {
     });
   });
 });
+app.get('/', (req, res) => {
+  res.send('Servidor funcionando correctamente');
+});
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`🚀 Servidor funcionando en puerto ${PORT}`);
 });
+
 
 
 
