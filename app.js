@@ -37,13 +37,13 @@ app.get('/stock', (req, res) => {
 
 // Crear preferencia para Cliente A
 app.post('/create_preference', async (req, res) => {
-  await crearPreferencia(req, res, clienteA, 'https://24917ee64df8.ngrok-free.app/webhook/clienteA');
+  await crearPreferencia(req, res, clienteA, 'https://saboreson.onrender.com/webhook/clienteA');
   console.log('preferencia creada cliente A')
 });
 
 // Crear preferencia para Cliente B
 app.post('/create_preference/comercio2', async (req, res) => {
-  await crearPreferencia(req, res, clienteB, 'https://24917ee64df8.ngrok-free.app/webhook/clienteB');
+  await crearPreferencia(req, res, clienteB, 'https://saboreson.onrender.com/webhook/clienteB');
   console.log('preferencia creada cliente B')
 });
 
@@ -110,7 +110,7 @@ async function crearPreferencia(req, res, client, webhookUrl) {
     const body = {
       items,
       back_urls: {
-        success: 'https://24917ee64df8.ngrok-free.app/success',
+        success: 'https://www.saboreson.com/success.html',
         failure: 'https://24917ee64df8.ngrok-free.app/failure',
         pending: 'https://24917ee64df8.ngrok-free.app/pending',
       },
@@ -387,7 +387,7 @@ const orderData = {
   external_reference: referencia,
   title: `Pedido QR`,
   description: "Compra en tienda online",
-  notification_url: 'https://24917ee64df8.ngrok-free.app/webhook/clienteA',
+  notification_url: 'https://saboreson.onrender.com/webhook/clienteA',
   total_amount: total,
   items: carrito.map(item => {
     const quantityReal = item.quantity;
@@ -460,7 +460,7 @@ app.post('/crear_qr/clienteB', async (req, res) => {
       external_reference: referencia,
       title: `Pedido QR`,
       description: "Compra en tienda online",
-      notification_url: 'https://24917ee64df8.ngrok-free.app/webhook/clienteB',
+      notification_url: 'https://saboreson.onrender.com/webhook/clienteB',
       total_amount: total,
       items: carrito.map(item => ({
         id: item.id,
@@ -557,6 +557,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor funcionando en puerto ${PORT}`);
 });
+
 
 
 
