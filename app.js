@@ -520,7 +520,7 @@ app.post('/admin/actualizar-stock', (req, res) => {
   }
 });
 
-const LOG_FILE_PATH = path.join(__dirname, 'pedidos_log.json');
+const LOG_FILE_PATH = '/tmp/pedidos_log.json';
 
 // Crear el archivo si no existe
 if (!fs.existsSync(LOG_FILE_PATH)) {
@@ -557,6 +557,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor funcionando en puerto ${PORT}`);
 });
+
 
 
 
