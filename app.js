@@ -527,7 +527,7 @@ if (!fs.existsSync(LOG_FILE_PATH)) {
   fs.writeFileSync(LOG_FILE_PATH, JSON.stringify([]));
 }
 
-app.post('https://saboreson.onrender.com/api/log-pedido', (req, res) => {
+app.post('/api/log-pedido', (req, res) => {
   const nuevoPedido = req.body;
 
   fs.readFile(LOG_FILE_PATH, 'utf8', (err, data) => {
@@ -557,6 +557,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor funcionando en puerto ${PORT}`);
 });
+
 
 
 
